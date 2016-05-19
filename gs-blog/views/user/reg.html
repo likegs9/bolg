@@ -1,0 +1,63 @@
+<%- include ../include/header-reg.html%>
+<div class="panel panel-default  col-xs-8 col-xs-offset-2">
+    <div class="panel-body">
+        <div class="row col-xs-9" style="font-family: \5FAE\8F6F\96C5\9ED1">
+            <form class="col-xs-offset-5" action="/users/reg" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="username">用户名</label>
+                    <input type="text" class="form-control" id="username" placeholder="请输入用户名" name="username">
+                </div>
+                <div class="form-group">
+                    <label for="userpassword">密码</label>
+                    <input type="password" class="form-control" id="userpassword" placeholder="请输入密码" name="password">
+                </div>
+                <div class="form-group">
+                    <label for="userpasswordAgain">再次输入密码</label>
+                    <input type="password" class="form-control" id="userpasswordAgain" placeholder="请再次输入密码" name="passwordagain">
+                </div>
+                <div class="form-group">
+                    <label for="useremail">邮箱</label>
+                    <input type="email" class="form-control" id="useremail" placeholder="请输入邮箱" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="userphoto">个人头像</label>
+                    <input type="file" id="userphoto" name="photo">
+                    <p class="help-block">请上传图片</p>
+                </div>
+                <button type="submit" class="btn btn-warning" id="reg">注册</button>
+                <a href="/" class="btn btn-default" id="bb">返回</a>
+            </form>
+        </div>
+    </div>
+</div>
+<!--<script>
+    window.onload=function(){
+        document.querySelector('#reg').onclick=function(){
+            var username=document.querySelector('#username')
+            var userpassword=document.querySelector('#userpassword')
+            var userpasswordAgain=document.querySelector('#userpasswordAgain')
+            var useremail=document.querySelector('#useremail')
+            var userphoto=document.querySelector('#userphoto')
+            var xhr=new XMLHttpRequest();
+            xhr.open('POST','/users/reg',true);
+            xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+            xhr.onreadystatechange=function(){
+                if(xhr.readystate==4&&xhr.status==200){
+                    console.log(xhr.response)
+                }
+            };
+            var formData=new FormData();
+            formData.append('username',username.value);
+            formData.append('userpassword',userpassword.value)
+            formData.append('userpasswordAgain',userpasswordAgain.value)
+            formData.append('useremail',useremail.value)
+            formData.append('userphoto',userphoto.files[0]);
+            xhr.send(formData)
+        }
+    }
+</script>-->
+<script src="/lib/jquery/dist/jquery.js"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+</body>
+</html>

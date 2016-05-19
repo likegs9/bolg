@@ -1,0 +1,90 @@
+<%- include ./include/header.html%>
+<div class="container row">
+  <div class="row">
+    <!--个人信息部分-->
+    <div class="col-xs-3">
+      <img src="<%= userdb.avatar%>" class="user-photo">
+      <p class="username"><%= userdb.username%><span class="username-xs"><%= userdb.username%></span></p>
+      <div class="user-address">
+        <p><span class="glyphicon glyphicon-globe"></span><span class="city">所在城市</span><span class="city"><%= userdb.city%></span></p>
+        <p><span class="glyphicon glyphicon-time"></span><span class="city">注册时间</span><span class="city"><%= userdb.createAt.toLocaleString()%></span></p>
+      </div>
+      <div class="user-address">
+        <div class="user-block">
+          <p class="block-number"><%= all%></p>
+          <p class="block-number-color"><span>文章数量</span></p>
+        </div>
+      </div>
+    </div>
+    <!--个人所有文章部分-->
+    <div class="col-xs-8">
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#"><span class="glyphicon glyphicon-list-alt city"></span>所有文章</a></li>
+      </ul>
+      <%
+        if(articles.length==0){
+      %>
+          <div class="none-article">你还没有写过文章快去写一个吧~</div>
+      <%
+      }
+      %>
+      <div style="margin-top:15px">
+        <%
+          for(var i=0;i<articles.length;i++){
+        %>
+        <ul class="media-list">
+          <li class="media line">
+            <div class="media-left">
+              <a href="#">
+                <img class="media-object userimg" src="<%=articles[i].user.avatar%>" alt="..." style="width:50px;height:50px">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading"><a href="/article/detail/<%=articles[i]._id%>"><%=articles[i].title%></a></h4>
+              <p><%=articles[i].content%></p>
+              <p class="createtime">创建时间：<%=articles[i].createAt.toLocaleString()%></p>
+              <p class="createtime">作者：<%=articles[i].user.username%></p>
+            </div>
+          </li>
+        </ul>
+        <%
+        }
+        %>
+      </div>
+      <nav>
+        <ul class="pagination">
+          <%
+          if(totalPage>0 && pageNumber>1){
+          %>
+          <li>
+            <a href="/users/index/?keywords=<%=keywords%>&pageNumber=<%=pageNumber-1%>&pageSize=<%=pageSize%>" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <%
+          }
+          %>
+          <%
+            for(var i=0;i<totalPage;i++){
+          %>
+            <li class="<%= i==pageNumber-1?'active':''%>"><a href="/users/index/?keywords=<%=keywords%>&pageNumber=<%=i+1%>&pageSize=<%=pageSize%>"><%=i+1%></a></li>
+          <%
+           }
+          %>
+          <%
+          if(pageNumber < totalPage){
+          %>
+          <li>
+            <a href="/users/index/?keywords=<%=keywords%>&pageNumber=<%=pageNumber-1%>&pageSize=<%=pageSize%>" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+          <%
+          }
+          %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+<%- include ./include/footer.html%>

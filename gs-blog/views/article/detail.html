@@ -1,0 +1,17 @@
+<%- include ../include/header.html%>
+<div class="container col-xs-8 col-xs-offset-2">
+    <div class="panel panel-warning">
+        <div class="panel-heading"> <%=article.title%></div>
+        <div class="panel-body">
+            <p><%=article.content%></p>
+            <p><img src="<%=article.img%>" class='img-responsive' alt="未上传图片"></p>
+        </div>
+        <div class="panel-body top-line">
+            <p>创建时间：<%=article.createAt.toLocaleString()%></p>
+            <p>作者：<%=article.user.username%></p>
+        </div>
+    </div>
+    <a href="/article/edit/<%=article._id%>" class="btn btn-warning">编辑</a>
+    <a href="/article/delete/<%=article._id%>"  class="btn btn-default">删除</a>
+ </div>
+<%- include ../include/footer.html%>

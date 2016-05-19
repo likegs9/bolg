@@ -1,0 +1,22 @@
+<%- include ../include/header.html%>
+<div class="col-xs-12" style="font-family: \5FAE\8F6F\96C5\9ED1">
+    <div class="list-group">
+        <form action="/users/correct" method="post" enctype="multipart/form-data">
+            <p  class="list-group-item active">
+                个人信息修改
+            </p>
+            <p class="list-group-item">姓名：<input type="text" name="username" value="<%= user.username%>" class="form-control"></p>
+            <p class="list-group-item">邮箱：<input type="email" name="email"  value="<%= user.email%>" class="form-control"></p>
+            <p  class="list-group-item">头像：
+                <img src="<%= user.avatar%>" alt="未上传" width="200px">
+                <input type="file" name="avatar" class="form-control" style="margin-top:10px;">
+            </p>
+            <p  class="list-group-item">所在城市：<input type="text" name="city" value="<%= user.city%>" class="form-control"></p>
+            <div style="margin-top:10px;">
+                <button  class="btn btn-info" type="submit">保存</button>
+                <a class="btn btn-default" href="/users/setting">返回</a>
+            </div>
+        </form>
+    </div>
+</div>
+<%- include ../include/footer.html%>

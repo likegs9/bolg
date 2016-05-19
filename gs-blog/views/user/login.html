@@ -1,0 +1,25 @@
+<%- include ../include/header-reg.html%>
+<div class="panel panel-default col-xs-8 col-xs-offset-2">
+    <div class="panel-body">
+        <div class="row col-xs-9" style="font-family: \5FAE\8F6F\96C5\9ED1">
+            <form class="col-xs-offset-5" action="/users/login" method="post">
+                <div class="form-group">
+                    <label for="exampleInputText">用户名</label>
+                    <input type="text" class="form-control" id="exampleInputText" placeholder="请输入用户名" name="username">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">密码</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="请输入密码" name="password">
+                </div>
+                <button type="submit" class="btn btn-warning">登录</button>
+                <a href="/users/reg" class="btn btn-info">注册</a>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<script src="/lib/jquery/dist/jquery.js"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<%- include ../include/header.html%>
+<div class="col-xs-12" style="font-family: \5FAE\8F6F\96C5\9ED1">
+    <div class="list-group">
+        <p href="#" class="list-group-item active">
+            个人信息修改
+        </p>
+        <p href="" class="list-group-item">姓名：<%= user.username%></p>
+        <p href="" class="list-group-item">邮箱：<%= user.email%></p>
+        <p href="" class="list-group-item">头像：<img src="<%= user.avatar%>" alt="未上传" width="200px"></p>
+        <p href="" class="list-group-item">所在城市：<%= user.city%></p>
+        <p href="" class="list-group-item">创建时间：<%= user.createAt.toLocaleString()%></p>
+    </div>
+    <a class="btn btn-info" href="/users/correct">修改</a>
+</div>
+<%- include ../include/footer.html%>

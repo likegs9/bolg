@@ -1,0 +1,13 @@
+.user-photo{width:100%;border-radius: 5px}
+.username{font-size: 20px;font-weight: bold;height:80px;border-bottom: 1px solid #EAEAEA;padding-top:20px;}
+.username-xs{display:block;font-size: 14px;color:#666;font-weight: 100}
+.user-address{min-height:80px;line-height:20px;border-bottom: 1px solid #EAEAEA;padding-top:10px;}
+.city{margin:0 10px;color:#656565}
+.user-block{width:80px;text-align: center;margin-top:10px;margin-left:-10px}
+.block-number{font-size: 20px;font-weight: bold;color:#125C93;}
+.block-number-color{color:#8F8F8F;font-size: 12px;}
+.userimg{border-radius:5px}
+.createtime{height:20px;margin:0;padding:0;color:#939393}
+.line{border-bottom: 1px #EFEFEF dotted;padding-bottom: 10px;}
+.top-line{border-top:1px solid #FCF8E3;color:#9B9B9B}
+.none-article{height:50px;line-height:50px;text-align: center;color:#ccc;font-size:14px;}

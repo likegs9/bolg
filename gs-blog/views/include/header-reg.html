@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.css'/>
+    <link rel='stylesheet' href='/css/myself.css'/>
+</head>
+<body>
+<div class="jumbotron">
+    <div class="col-xs-8 col-xs-offset-2" style="font-family: \5FAE\8F6F\96C5\9ED1">
+        <div class="page-header">
+            <h1>Hello!<small>欢迎你访问博客</small><i class="glyphicon glyphicon-heart" style="color:#E91E63"></i></h1>
+        </div>
+    </div>
+    <div style="clear:both"></div>
+</div>
+<div class="col-xs-12">
+    <%
+    if(error){
+    %>
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%=error%>
+    </div>
+    <%
+    }
+    %>
+</div>
